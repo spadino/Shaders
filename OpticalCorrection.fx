@@ -67,21 +67,21 @@ uniform bool TestGrid <
 	ui_category = "Calibration grid";
 > = false;
 
-uniform float IPD <
+//uniform float IPD <
 	// ui_label = "IPD (interpupillary distance)";
 	// ui_tooltip = "Adjust lens center relative to the screen size";
 	// ui_type = "drag";
 	// ui_min = 0.0; ui_max = 0.75; ui_step = 0.001;
 	// ui_category = "Stereo-vision adjustment";
-> = 0.477;
+//> = 0.477;
 
-uniform bool StereoSwitch <
+//uniform bool StereoSwitch <
 	// ui_label = "Stereoscopic view enabled";
 	// ui_tooltip = "Toggle stereo vision";
 	// ui_category = "Stereo-vision adjustment";
-> = false;
+//> = false;
 
-uniform float ParallaxOffset < __UNIFORM_SLIDER_FLOAT1
+//uniform float ParallaxOffset < __UNIFORM_SLIDER_FLOAT1
 	// ui_label = "Parallax horizontal offset (disparity)";
 	// ui_tooltip = "Adjust 3D effect power\n(disparity in screen percent)";
 	// #if __RESHADE__ < 40000
@@ -89,9 +89,9 @@ uniform float ParallaxOffset < __UNIFORM_SLIDER_FLOAT1
 	// #endif
 	// ui_min = 0.0; ui_max = 1.0;
 	// ui_category = "Parallax 3D effect";
-> = 0.355;
+//> = 0.355;
 
-uniform float ParallaxCenter < __UNIFORM_SLIDER_FLOAT1
+//uniform float ParallaxCenter < __UNIFORM_SLIDER_FLOAT1
 	// ui_label = "Parallax rotation center (ZPD)";
 	// ui_tooltip = "Adjust 3D effect middle point\n(zero parallax distance)";
 	// #if __RESHADE__ < 40000
@@ -99,28 +99,28 @@ uniform float ParallaxCenter < __UNIFORM_SLIDER_FLOAT1
 	// #endif
 	// ui_min = 0.0; ui_max = 1.0;
 	// ui_category = "Parallax 3D effect";
-> = 1.0;
+//> = 1.0;
 
-uniform int ParallaxSteps <
+//uniform int ParallaxSteps <
 	// ui_label = "Parallax sampling steps";
 	// ui_tooltip = "Adjust 3D effect quality\n(higher numbers may decrease performance)";
 	// ui_type = "drag";
 	// ui_min = 1; ui_max = 128; ui_step = 0.2;
 	// ui_category = "Parallax 3D effect";
-> = 16;
+//> = 16;
 
-uniform int ParallaxMaskScalar < __UNIFORM_SLIDER_INT1
+//uniform int ParallaxMaskScalar < __UNIFORM_SLIDER_INT1
 	// ui_label = "Parallax gaps compensation";
 	// ui_tooltip = "Adjust gaps from parallax offset\n(some glithes may occur due to lack of\nanti-aliasing in the depth pass)";
 	// ui_min = 0; ui_max = 32; ui_step = 0.2;
 	// ui_category = "Parallax 3D effect";
-> = 10;
+//> = 10;
 
-uniform bool ParallaxSwitch <
+//uniform bool ParallaxSwitch <
 	// ui_label = "Parallax enabled";
 	// ui_tooltip = "Toggle parallax 3D effect\n(disable MSAA if parallax does not work)";
 	// ui_category = "Parallax 3D effect";
-> = false;
+//> = false;
 
 uniform int FOV < __UNIFORM_SLIDER_INT1
 	ui_label = "Lens distortion power";
@@ -170,71 +170,71 @@ uniform bool PerspectiveSwitch <
 	ui_category = "Perspective distortion";
 > = true;
 
-uniform float4 ChGreenK <
+//uniform float4 ChGreenK <
 	// ui_label = "Chromatic green correction";
 	// ui_tooltip = "Adjust lens color fringing K\nfor green channel\n(Brown-Conrady model)\n[Zoom,K1,K2,K3]";
 	// ui_type = "drag";
 	// ui_step = 0.001;
 	// ui_category = "Chromatic radial correction";
-> = float4(0.0, 0.0, 0.0, 0.0);
+//> = float4(0.0, 0.0, 0.0, 0.0);
 
-uniform bool SoloGreen <
+//uniform bool SoloGreen <
 	// ui_label = "Green channel adjustment solo";
 	// ui_tooltip = "Visible only on calibration grid preview";
 	// ui_category = "Chromatic radial correction";
-> = false;
+//> = false;
 
-uniform float4 ChBlueK <
+//uniform float4 ChBlueK <
 	// ui_label = "Chromatic blue correction";
 	// ui_tooltip = "Adjust lens color fringing K\nfor blue channel\n(Brown-Conrady model)\n[Zoom,K1,K2,K3]";
 	// ui_type = "drag";
 	// ui_step = 0.001;
 	// ui_category = "Chromatic radial correction";
-> = float4(0.0, 0.0, 0.0, 0.0);
+//> = float4(0.0, 0.0, 0.0, 0.0);
 
-uniform bool SoloBlue <
+//uniform bool SoloBlue <
 	// ui_label = "Blue channel adjustment solo";
 	// ui_tooltip = "Visible only on calibration grid preview";
 	// ui_category = "Chromatic radial correction";
-> = false;
+//> = false;
 
-uniform bool ChromaticAbrSwitch <
+//uniform bool ChromaticAbrSwitch <
 	// ui_label = "Chromatic correction enabled";
 	// ui_tooltip = "Toggle color fringing correction";
 	// ui_category = "Chromatic radial correction";
-> = true;
+//> = true;
 
-uniform float2 ChGreenOffsetL <
+//uniform float2 ChGreenOffsetL <
 	// ui_label = "Left green center offset";
 	// ui_tooltip = "Adjust lens center for chromatic aberration";
 	// ui_type = "drag";
 	// ui_min = -0.2; ui_max = 0.2; ui_step = 0.001;
 	// ui_category = "Chromatic left-eye center";
-> = float2(0.0, 0.0);
+//> = float2(0.0, 0.0);
 
-uniform float2 ChBlueOffsetL <
+//uniform float2 ChBlueOffsetL <
 	// ui_label = "Left blue center offset";
 	// ui_tooltip = "Adjust lens center for chromatic aberration";
 	// ui_type = "drag";
 	// ui_min = -0.2; ui_max = 0.2; ui_step = 0.001;
 	// ui_category = "Chromatic left-eye center";
-> = float2(0.0, 0.0);
+//> = float2(0.0, 0.0);
 
-uniform float2 ChGreenOffsetR <
+//uniform float2 ChGreenOffsetR <
 	// ui_label = "Right green center offset";
 	// ui_tooltip = "Adjust lens center for chromatic aberration";
 	// ui_type = "drag";
 	// ui_min = -0.2; ui_max = 0.2; ui_step = 0.001;
 	// ui_category = "Chromatic right-eye center";
-> = float2(0.0, 0.0);
+//> = float2(0.0, 0.0);
 
-uniform float2 ChBlueOffsetR <
+//uniform float2 ChBlueOffsetR <
 	// ui_label = "Right blue center offset";
 	// ui_tooltip = "Adjust lens center for chromatic aberration";
 	// ui_type = "drag";
 	// ui_min = -0.2; ui_max = 0.2; ui_step = 0.001;
 	// ui_category = "Chromatic right-eye center";
-> = float2(0.0, 0.0);
+//> = float2(0.0, 0.0);
 
 uniform float Strength <
 	ui_label = "Sharpen strength";
@@ -336,8 +336,8 @@ float3 Grid(float2 Coordinates, float AspectRatio)
 	gridColor = lerp(gridColor, (RadialPattern ? 1.0 : crossColor), CrossMask);
 
 	// Solo colors
-	if(SoloGreen) gridColor.b = 0.0;
-	if(SoloBlue) gridColor.g = 0.0;
+	//if(SoloGreen) gridColor.b = 0.0;
+	//if(SoloBlue) gridColor.g = 0.0;
 
 	// Reduce grid brightness
 	return tv(gridColor);
@@ -486,7 +486,7 @@ float3 VR_ps(float4 vois : SV_Position, float2 texcoord : TexCoord) : SV_Target
 	static const float rAspect = ReShade::AspectRatio;
 
 	// Divide screen in two
-	float2 UvCoord = StereoSwitch? StereoVision(texcoord, IPD) : texcoord;
+	float2 UvCoord = texcoord;
 
 	// Generate negative-positive stereo mask
 	float StereoMask = step(0.5, texcoord.x)*2.0-1.0;
@@ -520,7 +520,7 @@ float3 VR_ps(float4 vois : SV_Position, float2 texcoord : TexCoord) : SV_Target
 		};
 
 		// Lens geometric aberration correction (Brown-Conrady model)
-		float Diagonal = rAspect; Diagonal *= StereoSwitch ? 0.5 : 1.0;
+		float Diagonal = rAspect; Diagonal *= 1.0;
 		Diagonal = length(float2(Diagonal, 1.0));
 		float InvDiagonal2 = 1.0 / pow(Diagonal, 2);
 
@@ -528,7 +528,7 @@ float3 VR_ps(float4 vois : SV_Position, float2 texcoord : TexCoord) : SV_Target
 		float Radius2 = dot(StereoCoord, StereoCoord); // Squared radius
 		float correctionK = kRadial(Radius2, K.x, K.y, K.z, K.w);
 		// Apply negative-positive stereo mask for tangental distortion (flip side)
-		float SideScreenSwitch = (StereoSwitch) ? StereoMask : 1.0;
+		float SideScreenSwitch = 1.0;
 
 		float2 correctionP = pTangental(
 			StereoCoord,
@@ -554,23 +554,7 @@ float3 VR_ps(float4 vois : SV_Position, float2 texcoord : TexCoord) : SV_Target
 	// Display test grid
 	if(TestGrid) return Grid(UvCoord, rAspect);
 
-	// Create parallax effect
-	if(ParallaxSwitch)
-	{
-		float ParallaxDirection = ParallaxOffset*0.01;
-		// For stereo-vison flip direction on one side
-		ParallaxDirection *= StereoSwitch ? StereoMask : 1.0;
-		// Apply parallax effect
-		UvCoord = Parallax(
-			UvCoord,
-			ParallaxDirection,
-			ParallaxCenter,
-			ParallaxMaskScalar,
-			ParallaxSteps
-		);
-	};
-
-	// Sample image with black borders to display
+		// Sample image with black borders to display
 	float3 Image = lerp(
 		tex2D(ReShade::BackBuffer, UvCoord).rgb, // Display image
 		0.0, // Black borders
@@ -578,107 +562,6 @@ float3 VR_ps(float4 vois : SV_Position, float2 texcoord : TexCoord) : SV_Target
 	);
 
 	// Display image
-	return Image;
-};
-
-float3 Chromatic_ps(float4 vois : SV_Position, float2 texcoord : TexCoord) : SV_Target
-{
-	// Bypass chromatic aberration switch
-	if(!ChromaticAbrSwitch){ return tex2D(ReShade::BackBuffer, texcoord).rgb; }
-
-	// Get display aspect ratio (horizontal/vertical resolution)
-	float rAspect = ReShade::AspectRatio;
-
-	// Generate negative-positive stereo mask
-	float SideScreenSwitch = step(0.5, texcoord.x)*2.0-1.0;
-
-	// Divide screen in two if stereo vision mode enabled
-	float2 CenterCoord = StereoSwitch? StereoVision(texcoord, IPD) : texcoord;
-
-	CenterCoord = CenterCoord*2.0-1.0; // Center coordinates
-	CenterCoord.x *= rAspect; // Correct aspect ratio
-
-	float Diagonal = rAspect; Diagonal *= StereoSwitch ? 0.5 : 1.0;
-	Diagonal = length(float2(Diagonal, 1.0));
-
-	CenterCoord /= Diagonal; // Normalize diagonally
-
-	// Left/right eye mask
-	float L = step(0.5, 1.0-texcoord.x), R = step(0.5, texcoord.x);
-
-	// Offset center green
-	float2 CoordGreen = ChGreenOffsetL * L + ChGreenOffsetR * R;
-	CoordGreen.x *= -1.0;
-	CoordGreen = 0.01 * CoordGreen + CenterCoord;
-	// Offset center blue
-	float2 CoordBlue = ChBlueOffsetL * L + ChBlueOffsetR * R;
-	CoordBlue.x *= -1.0;
-	CoordBlue = 0.01 * CoordBlue + CenterCoord;
-
-//	float RadiusGreen = dot(CoordGreen, CoordGreen); // Radius squared (techically accurate)
-//	float RadiusBlue = dot(CoordBlue, CoordBlue); // Radius squared (techically accurate)
-	float RadiusGreen = length(CoordGreen); // Radius
-	float RadiusBlue = length(CoordBlue); // Radius
-
-	// Calculate radial distortion K
-	float correctionGreenK = (1.0+ChGreenK.x)*kRadial(RadiusGreen, ChGreenK.y, ChGreenK.z, ChGreenK.w, 0.0);
-	float correctionBlueK = (1.0+ChBlueK.x)*kRadial(RadiusBlue, ChBlueK.y, ChBlueK.z, ChBlueK.w, 0.0);
-
-	// Apply chromatic aberration correction
-	CoordGreen = CoordGreen * correctionGreenK;
-	CoordBlue = CoordBlue * correctionBlueK;
-
-	CoordGreen *= Diagonal; CoordBlue *= Diagonal; // Back to vertical normalization
-	CoordGreen.x /= rAspect; CoordBlue.x /= rAspect; // Back to square
-
-	// Move origin to left top corner
-	CoordGreen = CoordGreen * 0.5 + 0.5; CoordBlue = CoordBlue * 0.5 + 0.5;
-
-	// Generate border mask for green and blue channel
-	float MaskBlue, MaskGreen; if(StereoSwitch)
-	{
-		// Mask compensation for center cut
-		float CenterCut = 0.5+(0.5-IPD)*SideScreenSwitch;
-
-		// Mask sides and center cut for blue channel
-		float2 MaskCoordBlue;
-		MaskCoordBlue.x = CoordBlue.x*2.0 - CenterCut; // Compensate for 2 views
-		MaskCoordBlue.y = CoordBlue.y;
-		MaskBlue = BorderMaskAA(MaskCoordBlue);
-
-		// Mask sides and center cut for green channel
-		float2 MaskCoordGreen;
-		MaskCoordGreen.x = CoordGreen.x*2.0 - CenterCut; // Compensate for 2 views
-		MaskCoordGreen.y = CoordGreen.y;
-		MaskGreen = BorderMaskAA(MaskCoordGreen);
-
-		// Reverse stereo coordinates to single view
-		CoordGreen = InvStereoVision(CoordGreen, SideScreenSwitch, IPD);
-		CoordBlue = InvStereoVision(CoordBlue, SideScreenSwitch, IPD);
-	}
-	else
-	{
-		MaskBlue = BorderMaskAA(CoordBlue);
-		MaskGreen = BorderMaskAA(CoordGreen);
-	};
-
-	float3 Image;
-	// Sample image red
-	Image.r = tex2D(ReShade::BackBuffer, texcoord).r;
-	// Sample image green
-	Image.g = lerp(
-		tex2D(ReShade::BackBuffer, CoordGreen).g,
-		0.0, // Black borders
-		MaskGreen // Anti-aliased border mask
-	);
-	// Sample image blue
-	Image.b = lerp(
-		tex2D(ReShade::BackBuffer, CoordBlue).b,
-		0.0, // Black borders
-		MaskBlue // Anti-aliased border mask
-	);
-
-	// Display chromatic aberration
 	return Image;
 };
 
@@ -739,9 +622,5 @@ technique VR < ui_label = "Optical Correction"; ui_tooltip = "Optical Correction
 	{
 		VertexShader = PostProcessVS;
 		PixelShader = FilmicSharpenPS;
-	}
-	pass{
-		VertexShader = PostProcessVS;
-		PixelShader = Chromatic_ps;
 	}
 };
